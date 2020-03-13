@@ -1,8 +1,12 @@
 import React from 'react'
-import { NavBar } from './components/navbar'
-import { useAuth } from './auth'
 import { Router, Route, Switch } from 'react-router-dom'
+
+import { useAuth } from './auth'
+
+import { NavBar } from './components/navbar'
+import { PrivateRoute } from './components/privateRoute'
 import { Profile } from './components/profile'
+
 import history from './utils/history'
 
 export const App = () => {
@@ -20,7 +24,7 @@ export const App = () => {
         </header>
         <Switch>
           <Route path='/' exact />
-          <Route path='/profile' component={ Profile } />
+          <PrivateRoute path='/profile' component={ Profile } />
         </Switch>
       </Router>
     </div>
