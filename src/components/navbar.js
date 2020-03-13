@@ -8,10 +8,15 @@ export const NavBar = () => {
   return (
     <div>
       {!isAuthenticated && (
-        <Button onClick={() => loginWithRedirect({})}>Log in</Button>
+        <Button
+          color='primary'
+          onClick={() => loginWithRedirect({})}
+          variant='contained'>
+          Log in
+        </Button>
       )}
 
-      {isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}
+      {isAuthenticated && <Button color='secondary' onClick={() => logout()} variant='contained'>Log out</Button>}
     </div>
   )
 }
