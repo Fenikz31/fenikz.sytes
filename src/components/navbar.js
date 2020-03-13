@@ -1,18 +1,17 @@
-import React from "react"
-import { useAuth0 } from "../react-auth0-spa"
+import React from 'react'
+import { Button } from '@material-ui/core'
+import { useAuth0 } from '../react-auth0-spa'
 
-const NavBar = () => {
+export const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
 
   return (
     <div>
       {!isAuthenticated && (
-        <button onClick={() => loginWithRedirect({})}>Log in</button>
+        <Button onClick={() => loginWithRedirect({})}>Log in</Button>
       )}
 
-      {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+      {isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}
     </div>
   )
 }
-
-export default NavBar
