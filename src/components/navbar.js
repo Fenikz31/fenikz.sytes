@@ -1,5 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { Button } from '@material-ui/core'
+
 import { useAuth } from '../auth'
 
 export const NavBar = () => {
@@ -7,6 +10,7 @@ export const NavBar = () => {
 
   return (
     <div>
+
       {!isAuthenticated && (
         <Button
           color='primary'
@@ -17,6 +21,14 @@ export const NavBar = () => {
       )}
 
       {isAuthenticated && <Button color='secondary' onClick={() => logout()} variant='contained'>Log out</Button>}
+
+      {isAuthenticated && (
+        <span>
+          <Link to="/">Home</Link>&nbsp;
+          <Link to="/profile">Profile</Link>
+        </span>
+      )}
+
     </div>
   )
 }
