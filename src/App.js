@@ -1,9 +1,9 @@
 import React from 'react'
-import NavBar from './components/NavBar'
-import { useAuth0 } from './react-auth0-spa'
+import { NavBar } from './components/navbar'
+import { useAuth } from './auth'
 
 export const App = () => {
-  const { loading } = useAuth0()
+  const { loading } = useAuth()
 
   if (loading) {
     return <div>Loading...</div>
